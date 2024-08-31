@@ -76,24 +76,24 @@ foreach ($prefs as $x => $y){
 
 function hello($name)
 {
-    echo $name.'さん、こんにちは。'."\n";
+    return $name. "さん、こんにちは。\n";
 }
 
-hello('金谷');
-hello('安藤');
+echo hello('金谷');
+echo hello('安藤');
 
 // Q11 関数-2
 
 function calcTaxInPrice($price)
 {
-   $price = $price * 1.1;
-   return $price;
+    $taxInPrice = $price * 1.1;
+    return $price. "円の税込み価格は" . $taxInPrice . "円です。\n" ;
 }
-echo "1000円の税込み価格は" . calcTaxInPrice(1000) . "円です。\n";
+echo calcTaxInPrice(1000);
 
 // Q12 関数とif文
 
-function distinguishNum ($evenodd){
+function distinguishNum($evenodd){
 
     if ($evenodd % 2 == 0) {
         return $evenodd. "は偶数です。\n";
@@ -101,24 +101,27 @@ function distinguishNum ($evenodd){
         return $evenodd. "は奇数です。\n";
     }
 }
-echo distinguishNum (11);
-echo distinguishNum (24);
+echo distinguishNum(11);
+echo distinguishNum(24);
+// $wwww = distinguishNum(24);
+// if (distinguishNum(24) === )
+
 
 // Q13 関数とswitch文
 
 function evaluateGrade ($grade){
 
     switch ($grade) {
-        case 'A': //$valの値が1の時実行される。
+        case 'A': //$gradeの値がAの時実行される。
             return "合格です。\n";
             break; //switch文から抜ける。
-        case 'B': //$valの値が1の時実行される。
+        case 'B': //$gradeの値がBの時実行される。
             return "合格です。\n";
             break; //switch文から抜ける。
-        case 'C': //$valの値が2の時実行される。
+        case 'C': //$gradeの値がCの時実行される。
             return "合格ですが追加課題があります。\n";
             break; //switch文から抜ける.
-        case 'D': //$valの値が3の時実行される.
+        case 'D': //$gradeの値がDの時実行される.
             return "不合格です。\n";
             break; //switch文から抜ける。
         default:

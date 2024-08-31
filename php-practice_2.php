@@ -87,12 +87,13 @@ $yamada = new Students(120, '山田');
 $yamada->attend('PHP');
 
 //Q5 定義済みクラス
+$date = new DateTime('2021-03-02');
+$prev_date = $date->modify('-1 month')->format('Y-m-d');
+echo $prev_date. "\n";
+
 $now = new DateTime();
-echo $now->format("Y-m-d \n");
+$now_str = $now->format('Y-m-d');
+$prev_date = new DateTime('1992-4-25');
 
-
-$day = new DateTime('1992/4/25');
-
-$diff = $day -> diff($now);
-echo $diff -> format("あの日から%a日経過しました。 \n");
+echo $prev_date -> diff($now) -> format("あの日から%a日経過しました。 \n");
 ?>
