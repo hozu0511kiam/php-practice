@@ -52,6 +52,7 @@ echo $prev->diff($now)->format('%a')
 ```
 
 - 3行目はメソッドチェーンなので、1つ前のメソッドの返り値から呼ばれる。
-format('%a')はdiff($now)、diff($now)は$prevのnew DateTime('2000-1-1')から返す。
-diffメソッドはDateTimeクラスに定義されており、ふたつの日付（$nowと$prev）の差を返す。
-formatメソッドもDateTimeクラスに定義されており、成功した場合にフォーマット済みの日付文字列を返すため、diffメソッドで返した差分の日数を返す。
+format('%a')はdiff($now)、diff($now)は$prevから返す。
+
+diffメソッドは$prevから呼ばれるのでDateTimeクラスに定義されており、ふたつの日付（$nowと$prev）の差を返す。
+formatメソッドはdiffメソッドがDateIntervalオブジェクトを返すので、DateIntervalクラスに定義されており、成功した場合にフォーマット済みの日付文字列を返すため、diffメソッドで返した差分の日数を返す。
