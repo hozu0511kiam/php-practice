@@ -1,30 +1,31 @@
 <?php
-// Q1 変数と文字列
+// Q1 変数と文字列 文字列結合
 
 $name = "天内";
 
-$introduction = "私の名前は「". $name. "」です。\n";
+$introduction = "私の名前は「". $name. "」です。\n"; //introduction:自己紹介
 echo $introduction;
 
 // Q2 四則演算
 
-$num = 4 * 5;
-echo $num. "\n";
-echo ($num / 2). "\n";
+$num = 4 * 5; //5×4
+echo $num. "\n"; //5かける4の表示
+echo ($num / 2). "\n"; //5かける4÷2
 
 // Q3 日付操作
-date_default_timezone_set('Asia/Tokyo');
-echo date("現在時刻は、Y年m月d日 H時i分s秒です。\n");
+date_default_timezone_set('Asia/Tokyo'); //日本時間の指定
+echo date("現在時刻は、Y年m月d日 H時i分s秒です。\n"); //date関数は日時委指定しない場合は現在時刻を表示する。
 
 // Q4 条件分岐-1 if文
 
 $device = "windows";
 
-if ($device === "windows" ||  $device ==="mac") {
+if ($device === "windows" || $device ==="mac") {
     echo "使用osは、". $device. "です。\n";
 }else {
     echo "どちらでもありません。\n";
 }
+//論理演算子を使用
 
 // Q5 条件分岐-2 三項演算子
 
@@ -56,7 +57,11 @@ foreach ($prefs as $prefectures => $city){
 }
 
 // Q8 連想配列-2
-echo $kanto[2]. "の県庁所在地は、". $prefs["埼玉県"]. "です。\n";
+foreach ($prefs as $prefectures => $city){
+    if($prefectures === "埼玉県"){
+    echo $prefectures. "の県庁所在地は、". $city. "です。\n";
+    }
+}
 
 // Q9 連想配列-3
 $prefs["愛知県"] = "名古屋市";
@@ -92,18 +97,19 @@ echo calcTaxInPrice(1000);
 
 // Q12 関数とif文
 
-function distinguishNum($evenodd){
+function distinguishNum($number){
 
-    if ($evenodd % 2 == 0) {
-        return $evenodd. "は偶数です。\n";
+    if ($number % 2 === 0) {
+        return $number. "は偶数です。\n";
     } else {
-        return $evenodd. "は奇数です。\n";
+        return $number. "は奇数です。\n";
     }
 }
 echo distinguishNum(11);
 echo distinguishNum(24);
-// $wwww = distinguishNum(24);
-// if (distinguishNum(24) === )
+
+//===は、値だけでなくデータ型まで比較して真偽を見分ける
+//仮に0を”0”（文字列型）としたとき、===の場合は型が異なるのでfalseとなり、偶数として処理されなくなる
 
 
 // Q13 関数とswitch文
@@ -125,5 +131,6 @@ function evaluateGrade($grade){
 }
 echo evaluateGrade("A");
 echo evaluateGrade("C");
-
+//echo→returnに修正：関数の処理結果を関数の外でも使うことができる。
+//break：返り値の場合、結果を呼び出したあと呼び出し元に返るため、繰り返し処理にならない。
 ?>

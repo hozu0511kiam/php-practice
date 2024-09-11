@@ -10,7 +10,7 @@ for ($i = 0; $i <= 4; $i++) {
 
 1. $i = 0（初期化）初期値は0
 2. $i <= 4（条件式）trueが返る
-3. echo $i（処理の実行）0が出力→
+3. echo $i（処理の実行）0が出力
 4. $i++（変化式）$iに1を代入して2回目の処理→4まで出力→faiseが返り、for文から抜ける。
 
 ## for文とforeachはどのように使い分けるのか説明してください。
@@ -40,6 +40,7 @@ public function __construct($id, $name)
 
 ## `DateTime::modify`メソッドの返り値を教えてください。
 - 変更されたDateTimeオブジェクト。DateTime クラスは日付と時刻を表すクラス。DateTime::modify() はDateTimeオブジェクトを変更する。
+メソッドチェーンに使う、変更された DateTime オブジェクトを返す。
 
 ## `DateTime::format`メソッドと`DateInterval::format`メソッドの違いを教えてください。
 - DateTimeクラスは、ミュータブル （変更可能）なクラス。DateTimeImmutableクラスは、イミュータブル （変更不可能）なクラス。そのため、`DateTime::format`で一度出すと、その後の処理が基準を変更されたものとして計算される。ex:現在日時→現在日時の1日後→現在日時の1日後の1か月後
